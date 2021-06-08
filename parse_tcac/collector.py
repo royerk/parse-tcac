@@ -7,8 +7,10 @@ project_dir = "parse_tcac"
 
 
 def download_xlsx():
-    url_format = "https://www.treasurer.ca.gov/ctcac/2021/applications/20210204/"
-    destination = "4pt_first_round"
+    # 2021 round 1: https://www.treasurer.ca.gov/ctcac/2021/applications/20210204/
+    # 2021 round 2: https://www.treasurer.ca.gov/ctcac/2021/secondround/applications/
+    url_format = "https://www.treasurer.ca.gov/ctcac/2021/secondround/applications/"
+    destination = "toto"
     year_last_2_digits = 21
 
     dir_path = os.path.join(project_dir, destination)
@@ -19,7 +21,7 @@ def download_xlsx():
 
     existing_files = os.listdir(dir_path)
 
-    for counter in range(400, 539 + 1):
+    for counter in range(0, 1000):
         file_name = f"{year_last_2_digits}-{counter}.xlsx"
 
         if counter < 100:
